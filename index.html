@@ -13,11 +13,64 @@
 
 <body>
   <div class="container">
-    <script src="src/app.js"></script>
-    <h1>
-      My Weather App
-    </h1>
+    <div class="weather-wrapper">
+
+      <div class="form">
+        <form class=col-9 id="search-form">
+          <input type="text" placeholder="Enter a city" autocomplete=on autofocus=off>
+        </form>
+        <form class=col-3 id="submit-form">
+          <input type="submit" value="Search">
+        </form>
+      </div>
+
+      <h1>
+        New York
+      </h1>
+
+      <div class="row daily-overview">
+        <div class="col-6 description-today">
+          <ul>
+            <li>
+              Wednesday 17:59, overcast clouds
+            </li>
+            <li>
+              Humidity:
+              <span class="humidity">
+                90%
+              </span>
+            </li>
+            <li>
+              Wind:
+              <span class="wind">
+                0.45km/h
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 temperature-today">
+          <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clouds">
+          <span class="degree-today" id="degrees">
+            5
+          </span>
+          <span class="units">
+            °C
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <footer>
+      This weather app was coded by Constança Pequito and is open-sourced on GitHub and hosted on Netlify
+    </footer>
   </div>
+
+  <script src="src/app.js"></script>
 </body>
 
 </html>
