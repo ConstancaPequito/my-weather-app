@@ -1,0 +1,26 @@
+.weather-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 1px solid #dad7cd;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+}
+
+.h1 {
+  color: aqua;
+}
+
+.form {
+  display: flex;
+  align-content: center;
+  padding: 10px 10px 20px 10px;
+}
+
+#search-form {
+  border: 0.5px solid darkgray;
+}
+
+#submit-form {
+}
