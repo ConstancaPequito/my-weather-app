@@ -1,6 +1,8 @@
 function getData(city) {
 let apiKey = "b3a8eb2418e5e4cf6a6ab375ca013626";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(displayTemperature)
 }
 
 function displayTemperature(response) {
@@ -19,4 +21,9 @@ function displayTemperature(response) {
     date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-axios.get(apiUrl).then(displayTemperature)
+function formatDate(timestamp) {
+    console.log(getData)
+    let date = new Date(timestamp * 1000);
+    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let day = days[date.getDay()];
+}

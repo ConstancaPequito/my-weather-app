@@ -8,8 +8,8 @@
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
 }
 
-.h1 {
-  color: aqua;
+h1 {
+  color: rgb(0, 17, 255);
 }
 
 .form {
@@ -18,9 +18,13 @@
   padding: 10px 10px 20px 10px;
 }
 
-#search-form {
-  border: 0.5px solid darkgray;
+.form-control {
+  width: 80%;
 }
 
 #submit-form {
+}
+
+footer {
+  font-size: 8px;
 }
