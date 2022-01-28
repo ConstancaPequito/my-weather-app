@@ -19,13 +19,13 @@ function displayTemperature(response) {
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = response.data.wind.speed;
     description.innerHTML = `${response.data.weather[0].main}, ${response.data.weather[0].description}`;
-    icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`);
+    icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     icon.setAttribute("alt",`${response.data.weather[0].main}, ${response.data.weather[0].description}`);
     date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-function formatDate(timestamp) {
-    let date = new Date(timestamp * 1000);
+function formatDate() {
+    let date = new Date();
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let day = days[date.getDay()];
     let hours = date.getHours();
