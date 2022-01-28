@@ -17,7 +17,7 @@ function displayTemperature(response) {
     city.innerHTML = response.data.name;
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = response.data.wind.speed;
-    description.innerHTML = `${response.data.weather[0].description}, ${response.data.weather[1].description}`;
+    description.innerHTML = `${response.data.weather[0].main}, ${response.data.weather[0].description}`;
     date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
@@ -39,8 +39,8 @@ function formatDate(timestamp) {
 function handleSubmit(event) {
     event.preventDefault();
     let cityInput = document.querySelector("#city-input");
-    search(cityInput.value);
+    getData(cityInput.value);
 }
-
+     
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
