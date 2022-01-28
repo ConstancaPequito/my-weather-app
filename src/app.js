@@ -44,6 +44,8 @@ function handleSubmit(event) {
     let cityInput = document.querySelector("#city-input");
     getData(cityInput.value);
 }
-     
+
+getData("New York");
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
