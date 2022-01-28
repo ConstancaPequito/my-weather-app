@@ -12,12 +12,15 @@ function displayTemperature(response) {
     let wind = document.querySelector("#windValue");
     let description = document.querySelector("#descriptionValue");
     let date = document.querySelector("#dateValue");
+    let icon = document.querySelector("#icon-input");
 
     temperatureDegrees.innerHTML = Math.round(response.data.main.temp);
     city.innerHTML = response.data.name;
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = response.data.wind.speed;
     description.innerHTML = `${response.data.weather[0].main}, ${response.data.weather[0].description}`;
+    icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}2x.png`);
+    icon.setAttribute("alt",`${response.data.weather[0].main}, ${response.data.weather[0].description}`);
     date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
