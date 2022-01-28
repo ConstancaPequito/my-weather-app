@@ -22,7 +22,6 @@ function displayTemperature(response) {
 }
 
 function formatDate(timestamp) {
-    console.log(getData)
     let date = new Date(timestamp * 1000);
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let day = days[date.getDay()];
@@ -34,4 +33,14 @@ function formatDate(timestamp) {
         if (minutes < 10) {
             minutes = `0${minutes}`;
         }
+    return `${day} ${hours}:${minutes}`;
 }
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInput = document.querySelector("#city-input");
+    search(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
