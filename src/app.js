@@ -13,6 +13,8 @@ function displayTemperature(response) {
     let description = document.querySelector("#descriptionValue");
     let date = document.querySelector("#dateValue");
     let icon = document.querySelector("#icon-input");
+    
+    celciusDegrees = response.data.main.temp;
 
     temperatureDegrees.innerHTML = Math.round(response.data.main.temp);
     city.innerHTML = response.data.name;
@@ -52,3 +54,22 @@ form.addEventListener("submit", handleSubmit);
 
 let search = document.querySelector("#search-button");
 search.addEventListener("click", handleSubmit);
+
+function displayCelcius(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#degrees");
+    temperatureElement.innerHTML = celciusDegrees;
+}
+
+function displayFahrenheint(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("degrees");
+    let fahrenheintTemperature = (celciusTemperature*9/5)+32;
+    temperatureElement.innerHTML = Math.round(fahrenheintTemperature);
+}
+
+let celciusTemperature = document.querySelector("#celcius-link");
+celciusTemperature.addEventListener("click",displayCelcius);
+
+let fahrenheintTemperature = document.querySelector("#fahrenheit-link");
+fahrenheintTemperature.addEventListener("click",displayFahrenheint);
