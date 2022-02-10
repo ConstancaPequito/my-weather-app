@@ -58,15 +58,17 @@ search.addEventListener("click", handleSubmit);
 function displayCelcius(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#degrees");
-    temperatureElement.innerHTML = celciusDegrees;
+    temperatureElement.innerHTML = Math.round(celciusDegrees);
 }
 
 function displayFahrenheint(event) {
     event.preventDefault();
-    let temperatureElement = document.querySelector("degrees");
-    let fahrenheintTemperature = (celciusTemperature*9/5)+32;
+    let temperatureElement = document.querySelector("#degrees");
+    let fahrenheintTemperature = (celciusDegrees*9)/5+32;
     temperatureElement.innerHTML = Math.round(fahrenheintTemperature);
 }
+
+let celciusDegrees = null;
 
 let celciusTemperature = document.querySelector("#celcius-link");
 celciusTemperature.addEventListener("click",displayCelcius);
