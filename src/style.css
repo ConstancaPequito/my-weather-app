@@ -25,6 +25,28 @@ h1 {
 #submit-form {
 }
 
+.weather-forecast {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.weather-forecast-date {
+  font-size: 14px;
+}
+
+.forecast-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-temperature {
+  font-size: 12px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 60%;
+}
+
 footer {
   font-size: 8px;
 }
