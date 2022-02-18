@@ -75,3 +75,35 @@ celciusTemperature.addEventListener("click",displayCelcius);
 
 let fahrenheintTemperature = document.querySelector("#fahrenheit-link");
 fahrenheintTemperature.addEventListener("click",displayFahrenheint);
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+
+    let days = ["Sat","Sun","Mon","Tue"];
+    days.forEach(function(day) {
+        
+        forecastHTML = forecastHTML + `
+        <div class="col-2">
+          <div class="weather-forecast-date">
+            Friday
+          </div>
+          <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="" class="forecast-image">
+          <div class="weather-forecast-temperature">
+            <span class="weather-forecast-temperature-max">
+              18 °C
+            </span>
+            <span class="weather-forecast-temperature-min">
+              8 °C
+            </span>
+          </div>
+        </div>
+      </div>
+        `;
+    });
+
+    forescastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    displayForecast();
+}
