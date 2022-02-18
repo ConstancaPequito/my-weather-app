@@ -41,6 +41,7 @@ h1 {
 
 .weather-forecast-temperature {
   font-size: 12px;
+  margin-bottom: 20px;
 }
 
 .weather-forecast-temperature-min {
