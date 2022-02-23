@@ -76,26 +76,27 @@ celciusTemperature.addEventListener("click",displayCelcius);
 let fahrenheintTemperature = document.querySelector("#fahrenheit-link");
 fahrenheintTemperature.addEventListener("click",displayFahrenheint);
 
-function displayForecast() {
+function displayForecast(response) {
+    let forecastResponse = response.data.daily;
+    
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
 
-    let days = ["Sat","Sun","Mon","Tue"];
-    days.forEach(function(day) {
+    forecastResponse.forEach(function(forecastDay) {
         
         forecastHTML = forecastHTML + `
         <div class="col-2">
           <div class="weather-forecast-date">
-            Friday
+            {forecastDay.dt}
           </div>
-          <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="" class="forecast-image">
+          <img src="http://openweathermap.org/img/wn/{forecastDay.weather[0].icon}@2x.png" alt="" class="forecast-image">
           <div class="weather-forecast-temperature">
             <span class="weather-forecast-temperature-max">
-              18 °C
+              {forecastDay.temp.max} °C
             </span>
             <span class="weather-forecast-temperature-min">
-              8 °C
+            {forecastDay.temp.min} °C
             </span>
           </div>
         </div>
