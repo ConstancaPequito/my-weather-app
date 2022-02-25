@@ -5,6 +5,14 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemperature)
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates)
+  let apiKey = "b3a8eb2418e5e4cf6a6ab375ca013626";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`
+  
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
     let temperatureDegrees = document.querySelector("#degrees");
     let city = document.querySelector("#cityValue");
@@ -24,10 +32,12 @@ function displayTemperature(response) {
     icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     icon.setAttribute("alt", `${response.data.weather[0].description}`);
     date.innerHTML = formatDate(response.data.dt * 1000);
+
+    getForecast(response.data.coord);
 }
 
-function formatDate() {
-    let date = new Date();
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let day = days[date.getDay()];
     let hours = date.getHours();
@@ -76,6 +86,7 @@ celciusTemperature.addEventListener("click",displayCelcius);
 let fahrenheintTemperature = document.querySelector("#fahrenheit-link");
 fahrenheintTemperature.addEventListener("click",displayFahrenheint);
 
+
 function formatForecastDay() {
   let date = new Date(timestamp*1000);
   let day = date.getDay();
@@ -92,7 +103,6 @@ function displayForecast(response) {
     let forecastHTML = `<div class="row">`;
 
     forecastResponse.forEach(function(forecastDay, index) {
-        
       if (index < 6) {
         forecastHTML = forecastHTML + `
         <div class="col-2">
@@ -115,5 +125,4 @@ function displayForecast(response) {
 
     forescastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
-    displayForecast();
 }
