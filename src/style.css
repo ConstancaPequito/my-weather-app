@@ -6,10 +6,11 @@
   border-radius: 10px;
   padding: 15px;
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  background-color: rgb(236, 234, 232);
 }
 
 h1 {
-  color: rgb(0, 17, 255);
+  color: rgb(255, 145, 0);
 }
 
 .form {
