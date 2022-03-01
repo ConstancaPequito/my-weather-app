@@ -5,8 +5,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemperature)
 }
 
-console.log(response);
-
 function getForecast(coordinates) {
   console.log(coordinates)
   let apiKey = "b3a8eb2418e5e4cf6a6ab375ca013626";
@@ -72,22 +70,6 @@ function displayCelcius(event) {
     let temperatureElement = document.querySelector("#degrees");
     temperatureElement.innerHTML = Math.round(celciusDegrees);
 }
-
-function displayFahrenheint(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#degrees");
-    let fahrenheintTemperature = (celciusDegrees*9)/5+32;
-    temperatureElement.innerHTML = Math.round(fahrenheintTemperature);
-}
-
-let celciusDegrees = null;
-
-let celciusTemperature = document.querySelector("#celcius-link");
-celciusTemperature.addEventListener("click",displayCelcius);
-
-let fahrenheintTemperature = document.querySelector("#fahrenheit-link");
-fahrenheintTemperature.addEventListener("click",displayFahrenheint);
-
 
 function formatForecastDay(timestamp) {
   let date = new Date(timestamp*1000);
