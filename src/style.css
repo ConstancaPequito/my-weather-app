@@ -23,14 +23,25 @@ li::first-letter {
   display: flex;
   align-content: center;
   padding: 10px 10px 20px 10px;
+  align-items: center;
 }
 
 .form-control {
   width: 80%;
 }
 
-#submit-form {
+#search-button {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #dad7cd;
+  border-radius: 5px;
+  width: 90px;
+  padding: 5px 5px 5px 5px;
 }
+
+.weather-today {
+  align-items: center;
+}
+
 .temperature-today {
   display: flex;
 }
