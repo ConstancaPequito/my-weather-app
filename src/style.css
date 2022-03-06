@@ -50,6 +50,10 @@ li::first-letter {
   font-size: 50px;
 }
 
+.units {
+  margin-top: -20px;
+}
+
 .description-today {
   font-size: 14px;
 }
